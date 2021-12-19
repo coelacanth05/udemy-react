@@ -1,37 +1,19 @@
-import React, {useEffect, useState } from "react";
-import ColorfulMessage from "./components/ColorfulMessage";
+import { CssModules } from "./components/CssModules";
+// import { Emotion } from "./components/Emotion";
+// import { InlineStyles } from "./components/InlineStyles";
+// import { StyledComponents } from "./components/StyledComponents";
+// import { StyledJsx } from "./components/StyledJsx";
+// import { TailwindCss } from "./components/TailwindCss";
 
-const App = () => {
-  const [num, setNum] = useState(0);
-  const [faceShowFlag, setFaceShowFlag] = useState(false);
-
-  const onClickCountUp = () => {
-    setNum(num + 1);
-  };
-  const onClickSwitchShowFlag = () => {
-    setFaceShowFlag(!faceShowFlag)
-  };
-
-  if (num > 0){
-  if (num % 3 === 0){
-faceShowFlag || setFaceShowFlag(true);
-  }else {
-faceShowFlag && setFaceShowFlag(false);
-  }
-}
-
+export const App = () => {
   return (
-    <>
-      <h1 style={{ color: "red" }}>hello</h1>
-      <ColorfulMessage color="blue">wrold</ColorfulMessage>
-      <ColorfulMessage color="pink">wrold?</ColorfulMessage>
-      <button onClick={onClickCountUp}>世界の〇〇</button>
-      <br />
-      {/* <button onClick={onClickSwitchShowFlag}>on/off</button> */}
-      <p>{num}</p>
-      {faceShowFlag && <p>(・Д・)</p>}
-    </>
+    <div>
+      {/* <InlineStyles /> */}
+      <CssModules />
+      {/* <StyledJsx />
+      <StyledComponents />
+      <Emotion />
+      <TailwindCss /> */}
+    </div>
   );
 };
-
-export default App;
